@@ -1,7 +1,7 @@
 import { IArticle, NewsResponse } from '@/types/types'
 import { useEffect, useState } from 'react'
 
-export default function useNewws (): [IArticle[] | undefined, boolean] {
+export default function useNews (): [IArticle[] | undefined, boolean] {
   const [articles, setArticles] = useState<IArticle[]>()
   const [loading, setLoading] = useState(true)
 

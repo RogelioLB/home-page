@@ -8,7 +8,7 @@ import Loader from './Loader'
 export default function Weather () {
   const { weather, loading } = useWeather()
   return (
-    <Card className='flex-1 flex items-baseline justify-between flex-col relative w-full'>
+    <Card className='flex-1 flex items-baseline justify-between flex-col relative w-full animate-fade-left animate-once'>
       {loading && (<Loader />)}
       {!loading && (
         <>
