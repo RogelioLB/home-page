@@ -10,7 +10,7 @@ export default function Profile ({ user }: { user?: { email?: string | null, nam
   const [userData, setUserData] = useState<{ repos: number, stars: number }>()
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch('http://localhost:3000/api/user')
+      const res = await fetch('https://homepage-browser.vercel.app/api/user')
       const data = await res.json()
       setUserData(data)
     }
