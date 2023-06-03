@@ -3,13 +3,12 @@ import { useEffect, useState } from 'react'
 import Card from './Card'
 
 export default function Clock () {
-  const [date, setDate] = useState('')
+  const [date, setDate] = useState(new Date().toLocaleTimeString().slice(0, 5))
 
   useEffect(() => {
     const interval = setInterval(() => {
       const dateNow = new Date()
-      const index = dateNow.toLocaleTimeString().lastIndexOf(':')
-      setDate(dateNow.toLocaleTimeString().slice(0, index))
+      setDate(dateNow.toLocaleTimeString().slice(0, 5))
     }, 1000)
 
     return function cleanup () { clearInterval(interval) }
@@ -17,7 +16,7 @@ export default function Clock () {
 
   return (
     <Card>
-      <span className='font-semibold text-8xl flex justify-between items-baseline'>{date}<small className='text-6xl'>PM</small></span>
+      <span className='font-semibold text-5xl flex justify-center gap-4 items-baseline'>{date}<small className='text-3xl'>PM</small></span>
     </Card>
   )
 }

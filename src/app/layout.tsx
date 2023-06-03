@@ -20,7 +20,7 @@ export default function RootLayout ({
       <body className={inter.className}>
         <main className='min-h-screen min-w-full relative'>
           {children}
-          <Image src={bg} alt='Background Image' className='absolute z-0 object-cover min-w-full h-full inset-0' />
+          <Image src={bg} blurDataURL={bg.blurDataURL} alt='Background Image' className='absolute z-0 object-cover min-w-full h-full inset-0' />
         </main>
       </body>
     </html>

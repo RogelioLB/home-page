@@ -8,7 +8,7 @@ import Loader from './Loader'
 export default function Weather () {
   const { weather, loading } = useWeather()
   return (
-    <Card className='flex-1 flex items-baseline justify-between flex-col relative'>
+    <Card className='flex-1 flex items-baseline justify-between flex-col relative w-full'>
       {loading && (<Loader />)}
       {!loading && (
         <>
@@ -17,7 +17,7 @@ export default function Weather () {
             <span className='text-8xl font-semibold'>{weather?.main.temp.toFixed(0)}°C</span>
           </div>
           <span className='font-thin text-4xl capitalize'>{weather?.weather[0].description}</span>
-          <span className='text-3xl font-normal -rotate-90 absolute -right-8 bottom-24'>{weather?.name}</span>
+          <span className='text-xl font-normal -rotate-90 absolute -right-8 top-12'>{weather?.name}</span>
         </>
       )}
     </Card>

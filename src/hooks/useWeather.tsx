@@ -11,10 +11,10 @@ export default function useWeather () {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(async (position) => {
       const { coords: { latitude, longitude } } = position
+      console.log(position)
       setLoading(true)
-      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}&units=metric&lang=es`)
+      const res = await fetch(`${window.location.origin}/api/weather?lat=${latitude}&lon=${longitude}`)
       const data: Weather = await res.json()
-      console.log(data)
       setWeather(data)
       setLoading(false)
     }, (err) => {
