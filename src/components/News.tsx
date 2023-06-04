@@ -7,7 +7,7 @@ import Article from './Article'
 export default function News () {
   const [articles, loading] = useNews()
   return (
-    <Card className='flex flex-col gap-1 flex-1 animate-once animate-fade-up animate-delay-200'>
+    <Card className='hidden lg:flex flex-col gap-1 flex-1 animate-once animate-fade-up animate-delay-200'>
       {
         loading
           ? <h3>Cargando noticias...</h3>

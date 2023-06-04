@@ -15,7 +15,7 @@ export default function Clock () {
   }, [])
 
   return (
-    <Card className='animate-fade-right animate-once'>
+    <Card className='animate-fade-right animate-once flex items-center justify-center'>
       <span className='font-semibold text-5xl flex justify-center gap-4 items-baseline'>{date}</span>
     </Card>
   )

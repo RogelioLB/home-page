@@ -13,8 +13,10 @@ export default function Weather () {
       {!loading && (
         <>
           <div className='flex gap-4 items-center'>
-            <Image src={icons[weather?.weather[0]?.icon ?? ''] ?? icons['']} width={136} height={136} alt='Weather cloud' />
-            <span className='text-8xl font-semibold'>{weather?.main.temp.toFixed(0)}°C</span>
+            <div className='relative w-20 lg:w-32 aspect-square'>
+              <Image src={icons[weather?.weather[0]?.icon ?? ''] ?? icons['']} fill alt='Weather cloud' />
+            </div>
+            <span className='text-5xl lg:text-8xl font-semibold'>{weather?.main.temp.toFixed(0)}°C</span>
           </div>
           <span className='font-thin text-4xl capitalize'>{weather?.weather[0].description}</span>
           <span className='text-xl font-normal -rotate-90 absolute -right-8 top-12'>{weather?.name}</span>
